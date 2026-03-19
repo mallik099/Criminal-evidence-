@@ -1,0 +1,124 @@
+{% load static %}
+<html>
+<head>
+<title>Criminal Evidences Management</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="{% static 'style.css' %}" rel="stylesheet" type="text/css" />
+<script language="javascript">
+	function validate(formObj)
+	{
+	if(formObj.t1.value.length==0)
+	{
+	alert("Please Enter reported crime");
+	formObj.t1.focus();
+	return false;
+	}
+	if(formObj.t2.value.length==0)
+	{
+	alert("Please Enter crime details");
+	formObj.t2.focus();
+	return false;
+	}
+	if(formObj.t3.value.length==0)
+	{
+	alert("Please Enter evidence details");
+	formObj.t3.focus();
+	return false;
+	}
+	if(formObj.t4.value.length==0)
+	{
+	alert("Please Enter crime area");
+	formObj.t4.focus();
+	return false;
+	}
+	
+	if(formObj.t5.value.length==0)
+	{
+	alert("Please Enter witness name");
+	formObj.t5.focus();
+	return false;
+	}
+	if(formObj.t6.value.length==0)
+	{
+	alert("Please Enter witness phone");
+	formObj.t6.focus();
+	return false;
+	}
+	if(formObj.t7.value.length==0)
+	{
+	alert("Please choose crime date");
+	formObj.t7.focus();
+	return false;
+	}
+	if(formObj.t8.value.length==0)
+	{
+	alert("Please upload crime or evidence image");
+	formObj.t8.focus();
+	return false;
+	}
+	return true;
+	}
+	</script>
+	
+</head>
+<style>
+body {
+  background-image: url("{% static 'images/back.jpg' %}");
+}
+</style>
+<body>
+<div class="main">
+  <div class="main_resize">
+    <div class="header">
+      <div class="logo">
+        <h1><span>Criminal Evidences Management System using Blockchain</span><small></small></h1>
+      </div>
+    </div>
+    <div class="content">
+      <div class="content_bg">
+        <div class="menu_nav">
+     <ul>      
+     <li><a href="{% url 'AddEvidences' %}"><font size="3" color="black">Add New Crime Evidences</a></li>
+	 <li><a href="{% url 'AccessEvidence' %}"><font size="3" color="black">Access Available Evidences</a></li>	 
+	 <li><a href="{% url 'index' %}"><font size="3" color="black">Logout</a></li>
+   </ul>    
+        </div>
+        <div class="hbg"><img src="{% static 'images/header_images.jpg' %}" width="1010" height="200" alt="" /></div>
+      				<center>
+<form name="f1" method="post" action={% url 'AddEvidencesAction' %} enctype="multipart/form-data" onsubmit="return validate(this);">
+{% csrf_token %}<br/>
+   <h2><b>Add Evidences Screen</b></h2>
+   
+	<center>{{ data|safe }}</center>
+						
+						<table align="center" width="30%" >
+			 <tr><td><font size='' color="black"><b>Reported&nbsp;Crime</b></td>
+			 <td><input type="text" name="t1" style="font-family: Comic Sans MS" size="35"></td></tr>
+
+			 <tr><td><font size='' color="black"><b>Crime&nbsp;Details</b></td><td><input type="text" name="t2" style="font-family: Comic Sans MS" size="65"/></td></tr>
+         
+		 
+			<tr><td><font size='' color="black"><b>Evidence&nbsp;Details</b></td>
+			<td><input name="t3" type="Text" size="65"></td></td></tr>
+
+		    
+		   <tr><td><font size='' color="black"><b>Crime&nbsp;Area</b></td><td><input type="text" name="t4" style="font-family: Comic Sans MS" size="30"/></td></tr>
+
+          <tr><td><font size='' color="black"><b>Witness&nbsp;Name</b></td><td><input name="t5" type="Text" size="30"></td></td></tr>
+
+		  <tr><td><font size='' color="black"><b>Witness&nbsp;Phone</b></td><td><input name="t6" type="Text" size="20"></td></td></tr>
+
+		  <tr><td><font size='' color="black"><b>Crime&nbsp;Date</b></td><td><input name="t7" type="date" size="20"></td></td></tr>
+
+		  <tr><td><font size='' color="black"><b>Upload&nbsp;Crime&nbsp;Evidence&nbsp;Image</b></td><td><input name="t8" type="file" size="20"></td></td></tr>
+
+
+			<tr><td></td><td><input type="submit" value="Submit"></td>
+			</table>
+				</div>	
+					
+				</div>
+				
+					
+	</body>
+</html>

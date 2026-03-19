@@ -1,0 +1,20 @@
+# Virtual Environment
+venv/
+django_venv/
+env/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Django
+db.sqlite3
+*.log
+
+# Static files
+EvidenceApp/static/files/
+
+# OS
+.DS_Store
+Thumbs.db

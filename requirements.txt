@@ -1,0 +1,8 @@
+pip install numpy==1.24.3
+pip install Django==4.2.0
+pip install Pillow==10.0.0
+pip install web3==6.11.0
+pip install urllib3==2.0.7
+pip install requests==2.31.0
+pip install rsa==4.9
+
